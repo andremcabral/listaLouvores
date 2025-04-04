@@ -93,8 +93,8 @@ def gerar_html(nome_arquivo, informacoes, texto_principal):
 <body>
     <h1>{informacoes['Título']}</h1>
     <table>
-        <tr><th width="100px">Título</th><td colspan=7>{informacoes['Título']}</td></tr>
-        <tr><th width="100px">Artista</th><td>{informacoes['Artista']}</td>
+        <tr><th width="70px">Título</th><td colspan=10>{informacoes['Título']}</td></tr>
+        <tr><th width="70px">Artista</th><td>{informacoes['Artista']}</td>
             <th width="50px">Autor</th><td>{informacoes['Autor']}</td>
             <th width="50px">Tom</th><td>{informacoes['Tom']}</td>
             <th width="50px">BPM</th><td>{informacoes['BPM']}</td>
