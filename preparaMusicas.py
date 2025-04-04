@@ -68,24 +68,24 @@ def gerar_html(nome_arquivo, informacoes, texto_principal):
     <style>
         pre {{
             font-family: Verdana, Arial;
-            margin: 20px;
+            margin: 10px;
         }}
         body {{
             font-family: Verdana;
-            margin: 20px;            
+            margin: 10px;            
             color: white;
             background-color: RGB(60,60,70);
         }}
         table {{
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }}
         table, th, td {{
             border: 1px solid black;
         }}
         th, td {{
-            padding: 8px;
+            padding: 4px;
             text-align: left;
         }}
     </style>
@@ -94,11 +94,11 @@ def gerar_html(nome_arquivo, informacoes, texto_principal):
     <h1>{informacoes['Título']}</h1>
     <table>
         <tr><th width="100px">Título</th><td colspan=7>{informacoes['Título']}</td></tr>
-        <tr><th width="100px">Artista</th><td colspan=7>{informacoes['Artista']}</td></tr>
-        <tr><th width="100px">Autor</th><td>{informacoes['Autor']}</td>
-            <th width="100px">Tom</th><td width="100px">{informacoes['Tom']}</td>
-            <th width="100px">BPM</th><td width="100px">{informacoes['BPM']}</td>
-            <th width="100px">Tempo</th><td width="100px">{informacoes['Tempo']}</td>
+        <tr><th width="100px">Artista</th><td>{informacoes['Artista']}</td>
+            <th width="50px">Autor</th><td>{informacoes['Autor']}</td>
+            <th width="50px">Tom</th><td>{informacoes['Tom']}</td>
+            <th width="50px">BPM</th><td>{informacoes['BPM']}</td>
+            <th width="50px">Tempo</th><td>{informacoes['Tempo']}</td>
         </tr>
     </table>
     <pre>{texto_principal}</pre>
@@ -193,15 +193,14 @@ def gerar_indice(pasta_html, arquivos_html):
             z-index: 1000; /* Garante que fique acima de outros elementos */
         }        
         .conteudo {
-            margin-top: 50px; /* O conteúdo começa abaixo da div fixa */
-            height: 2000px; /* Apenas para demonstrar rolagem */
+            margin-top: 5px; /* O conteúdo começa abaixo da div fixa */
             # background: linear-gradient(to bottom, #f0f0f0, #dcdcdc);
         }
         iframe {
             width: 90%;
             height: 1000px;
             border: none;
-            margin-top: 10px;
+            margin-top: 0px;
             color: red;
             background-color: lightgray;
             display: none; /* Inicialmente escondido */
@@ -210,7 +209,7 @@ def gerar_indice(pasta_html, arquivos_html):
             font-family: Verdana;
             color: white;
             background-color: black;
-            padding-top: 190px; /* Ajuste para o conteúdo não ficar escondido por baixo */
+            padding-top: 5px; /* Ajuste para o conteúdo não ficar escondido por baixo */
             padding-botton: 10px
         }
 
@@ -235,20 +234,19 @@ def gerar_indice(pasta_html, arquivos_html):
     </style>
 </head>
 <body>
-<div class="div-fixa">
-<h1 align="center">Índice de Músicas Cadastradas</h1>
-<!--<div width="60%">-->
-    <input type="text" id="search-box" placeholder="Digite o nome para buscar..." onkeyup="searchList()">
-    <br>
-    Clique no nome para abrir a letra abaixo ou no '>>>' para abrir em nova aba
-</div>
+<!--<div class="div-fixa">-->
+<!--&lt;!&ndash;<h1 align="center">Índice de Músicas Cadastradas</h1>&ndash;&gt;-->
+<!--&lt;!&ndash;<div width="60%">&ndash;&gt;-->
+<!--    -->
+<!--&lt;!&ndash;    <br>&ndash;&gt;-->
+<!--&lt;!&ndash;    Clique no nome para abrir a letra abaixo ou no '>>>' para abrir em nova aba&ndash;&gt;-->
+<!--</div>-->
 <div class="conteudo">
-
+<input type="text" id="search-box" placeholder="Digite o nome para buscar..." onkeyup="searchList()">
     <ul id="music-list">"""
     for index, arquivo in enumerate(arquivos_html):
         indice_conteudo += f'<li>{index+1} - <a href="html\\{arquivo}" target="_blank"> >>> </a>'
         indice_conteudo += f"""<a href="javascript:void(0);" onclick="toggleIframe('html/{arquivo}', this)"> {arquivo.split(".html")[0]} </a></li>"""
-
     indice_conteudo += '<li>//-//</li>'"""
 </ul>
 </div>
